@@ -6,5 +6,5 @@ class puerto:
 	def interaccion(self, diccionario):
 		ubicacion=diccionario["ubicacion"]
 		nombre=diccionario["nombre"]
-		var=self.servicio.caso_uso(ubicacion, nombre)
-		return var
+		respuesta=self.servicio.caso_uso(ubicacion, nombre)
+		return respuesta
