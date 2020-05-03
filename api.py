@@ -13,7 +13,7 @@ def entrada():
 		"ubicacion" : request.json['ubicacion']
 	}
 	
-	respuesta=puerto.interaccion(diccionario)
+	respuesta=puerto(diccionario)
 
 	if respuesta==True:
 		return jsonify({"respuesta":"200"})

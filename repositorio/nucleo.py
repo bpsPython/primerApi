@@ -1,39 +1,16 @@
 import shlex, subprocess
-class logicaNucleo():
-	def __init__(self):
-		self.nombre=""
-		self.ubicacion=""
-		self.instrucciones=[]
+def microservicio(ubicacion, nombre):
+	nivel1='mkdir '
+	nivel2=ubicacion + nombre
+	nivel3=" " + nivel2 + "/repositorios "
+	niveles=nivel1 + nivel2 + nivel3 
+	subprocess.call(shlex.split(niveles))
 
-	def niveles(self):
-		nivel1='mkdir '
-		nivel2=self.ubicacion + self.nombre
-		nivel3=" " + nivel2 + "/repositorios "
-		niveles=nivel1 + nivel2 + nivel3 
-		return niveles
-	
-	def directorios(self):
-		niveles=self.niveles()
-		subprocess.call(shlex.split(niveles))
+	level1='touch '
+	level2=ubicacion + nombre
+	level3=" " + level2 + "/__init__.py " + level2 + "/nucleo.py " + level2 + "/servicio.py " + level2 + "/adaptadorEntrada.py " + level2 + "/adaptadorSalida.py "+ level2 + "/puertoEntrada.py "+ level2 + "/puertoSalida.py "
+	level4=level2 + "/repositorios/__init__.py " + level2 + "/repositorios/nucleo.py " + level2 + "/repositorios/servicio.py " + level2 + "/repositorios/adaptadorEntrada.py " + level2 + "/repositorios/adaptadorSalida.py " + level2 + "/repositorios/puertoEntrada.py " + level2 + "/repositorios/puertoSalida.py "
+	leveles=level1 + level2 + level3 + level4
+	subprocess.call(shlex.split(leveles))
 
-	def modulos(self):
-		nivel1='touch '
-		nivel2=self.ubicacion + self.nombre
-		nivel3=" " + nivel2 + "/__init__.py " + nivel2 + "/nucleo.py " + nivel2 + "/servicio.py " + nivel2 + "/adaptadorEntrada.py " + nivel2 + "/adaptadorSalida.py "+ nivel2 + "/puertoEntrada.py "+ nivel2 + "/puertoSalida.py "
-		nivel4=nivel2 + "/repositorios/__init__.py " + nivel2 + "/repositorios/nucleo.py " + nivel2 + "/repositorios/servicio.py " + nivel2 + "/repositorios/adaptadorEntrada.py " + nivel2 + "/repositorios/adaptadorSalida.py " + nivel2 + "/repositorios/puertoEntrada.py " + nivel2 + "/repositorios/puertoSalida.py "
-		niveles=nivel1 + nivel2 + nivel3 + nivel4
-		return niveles
-
-	def archivos(self):
-		niveles=self.modulos()
-		subprocess.call(shlex.split(niveles))
-
-	def microservicio(self, ubicacion, nombre):
-		if nombre == "":
-			print("error, ingrese texto")
-		else:
-			self.ubicacion=ubicacion
-			self.nombre=nombre
-			self.directorios()
-			self.archivos()
-			return True
+	return True

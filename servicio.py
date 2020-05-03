@@ -1,11 +1,4 @@
-from nucleo import *
-from repositorio.nucleo import *
-
-class servicio:
-	def __init__(self):
-		self.nucleo=nucleo()
-		self.dependencia=logicaNucleo()
-
-	def caso_uso(self, ubicacion, nombre):
-		respuesta=self.nucleo.microservicio(ubicacion, nombre, self.dependencia)
-		return respuesta  
+from nucleo import nucleo
+def servicio(ubicacion, nombre):
+	respuesta=nucleo(ubicacion, nombre)
+	return respuesta  

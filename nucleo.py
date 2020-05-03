@@ -1,4 +1,4 @@
-class nucleo:
-	def microservicio(self, ubicacion, nombre, dependencia):
-		var=dependencia.microservicio(ubicacion, nombre)
-		return var
+from repositorio.nucleo import microservicio
+def nucleo(ubicacion, nombre):
+	respuesta=microservicio(ubicacion, nombre)
+	return respuesta
