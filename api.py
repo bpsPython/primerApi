@@ -1,6 +1,4 @@
-import json
 from flask import Flask, jsonify, request
-
 from puerto import puerto
 
 app = Flask(__name__)
@@ -16,6 +14,7 @@ def entrada():
 	}
 	
 	respuesta=puerto.interaccion(diccionario)
+
 	if respuesta==True:
 		return jsonify({"respuesta":"200"})
 	return jsonify({"respuesta":"400"})
