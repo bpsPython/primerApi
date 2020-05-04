@@ -1,4 +1,3 @@
-from repositorio.nucleo import microservicio
-def nucleo(ubicacion, nombre):
+def nucleo(ubicacion, nombre, microservicio):
 	respuesta=microservicio(ubicacion, nombre)
 	return respuesta
